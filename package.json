@@ -1,0 +1,44 @@
+{
+  "name": "nesly-chr-edit",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CHR editor in the browser",
+  "main": "index.js",
+  "scripts": {
+    "build-js": "browserify browser/main.js | uglifyjs -mc > static/bundle.js",
+    "build": "npm run build-js",
+    "watch-js": "watchify browser/main.js -o static/bundle.js -dv",
+    "watch": "npm run watch-js",
+    "start": "npm run build && node index.js",
+    "start-dev": "npm run watch & npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/emkay/nesly-chr-edit.git"
+  },
+  "keywords": [
+    "chr",
+    "edit",
+    "browser"
+  ],
+  "author": "Michael Matuzak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emkay/nesly-chr-edit/issues"
+  },
+  "dependencies": {
+    "browserify": "~2.35.4",
+    "domready": "~0.2.13",
+    "bunyan": "~0.22.0",
+    "error-page": "0.0.6",
+    "req-wants": "0.0.2",
+    "uglify-js": "~2.4.3",
+    "routes": "~0.2.0",
+    "beardo": "~1.1.1",
+    "st": "~0.2.3"
+  },
+  "devDependencies": {
+    "watchify": "~0.3.0"
+  }
+}
